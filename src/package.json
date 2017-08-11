@@ -1,0 +1,34 @@
+{
+  "name": "yntoast",
+  "version": "2.3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guozefei/yntoast"
+  },
+  "author": {
+    "name": "Zefei Guo",
+    "email": "guozefei@gmail.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guozefei/yntoast/issues"
+  },
+  "main": "yntoast.umd.js",
+  "module": "yntoast.js",
+  "jsnext:main": "yntoast.js",
+  "typings": "yntoast.d.ts",
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "@types/jquery": "^2.0.48",
+    "@types/underscore": "^1.8.1",
+    "jquery": "^1.9.1"
+  },
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}

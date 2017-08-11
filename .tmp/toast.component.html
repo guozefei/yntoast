@@ -1,0 +1,13 @@
+<div class="widget-container">
+    <div class="widget-toast">
+        <p>
+            <svg class="icon-hint">
+                <use class="icon-success" xlink:href="icons.svg#file_upload_success"/>
+                <use class="icon-error" xlink:href="icons.svg#file_upload_error"/>
+                <use class="icon-warning" xlink:href="icons.svg#file_upload_warning"/>
+            </svg>
+            <span class="hint-text" [hidden]="!message">{{message + '！'}}</span>
+            <span class="undo" *ngIf="undo && message" (click)="undo()">撤销</span>
+        </p>
+    </div>
+</div>

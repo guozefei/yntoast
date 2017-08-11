@@ -1,0 +1,90 @@
+.widget-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    white-space: nowrap;
+    text-align: center;
+    z-index: 1000;
+  .widget-toast {
+    position: relative;
+    display: inline-block;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 0 0 4px 4px;
+    background: #fff;
+    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+    .tool {
+      cursor: pointer;
+      color: #78a2de;
+    }
+    .undo {
+      margin: 0 8px;
+      cursor: pointer;
+      color: #dd5656;
+    }
+    .info {
+      background: #dde5f2;
+      border: 1px solid #a4c0e8;
+      box-shadow: 1px 0px 1px #d3d3d3;
+      padding: 0 18px;
+      .icon-hint {
+        display: none;
+      }
+    }
+    .icon-hint {
+      display: none;
+    }
+    .success,
+    .error,
+    .warning {
+      padding: 0 20px;
+      .icon-hint {
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 13px;
+        left: 28px;
+        display: block;
+      }
+      .hint-text {
+        color: #888;
+        margin-left: 30px;
+      }
+    }
+    .success {
+      .icon-success {
+        display: block;
+      }
+      .icon-error {
+        display: none;
+      }
+      .icon-warning {
+        display: none;  
+      }
+    }
+    .error {
+      .icon-success {
+        display: none;
+      }
+      .icon-error {
+        display: block;
+      }
+      .icon-warning {
+        display: none;  
+      }
+    }
+    .warning {
+      .icon-success {
+        display: none;
+      }
+      .icon-error {
+        display: none;
+      }
+      .icon-warning {
+        display: block;  
+      }
+    }
+  }
+}
