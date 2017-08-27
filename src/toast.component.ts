@@ -12,7 +12,10 @@ import { ToastBroadcasterAdapter } from './broadcasterAdapter';
 
 @Component({
     selector: 'widget-toast',
-    templateUrl: './toast.component.html'
+    templateUrl: './toast.component.html',
+    styleUrls: [
+        './toast.scss'
+    ]
 })
 export class WidgetToastComponent implements OnInit, OnDestroy {
     public message: string;
