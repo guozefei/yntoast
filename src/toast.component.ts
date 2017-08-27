@@ -5,7 +5,8 @@ import {
     ElementRef
 } from '@angular/core';
 import { Subscription } from 'rxjs';
-import * as $ from 'jquery';
+import * as jqueryProxy from 'jquery';
+const jquery: JQueryStatic = (<any>jqueryProxy).default || jqueryProxy;
 
 import { ToastBroadcasterAdapter } from './broadcasterAdapter';
 
@@ -29,7 +30,7 @@ export class WidgetToastComponent implements OnInit, OnDestroy {
     ) { }
 
     public ngOnInit(): void {
-        this.el = $(this.elementRef.nativeElement).find('.widget-container');
+        this.el = jquery(this.elementRef.nativeElement).find('.widget-container');
         // this.broadcaster.on() 目前组件发出的广播是$rootScope
         // 目前页面初始化时会出现一次undefined，
         // 跟 ynMenu 未升级有关

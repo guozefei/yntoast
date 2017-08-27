@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   del = require('del'),
   runSequence = require('run-sequence'),
+  replace = require('gulp-replace'),
   inlineResources = require('./tools/gulp/inline-resources');
 
 const rootFolder = path.join(__dirname);
@@ -91,6 +92,8 @@ gulp.task('rollup:fesm', function () {
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
       format: 'es'
     }))
+    .pipe(replace('jquery/index', 'jquery'))
+    .pipe(replace('underscore/index', 'underscore'))
     .pipe(gulp.dest(distFolder));
 });
 
@@ -139,6 +142,8 @@ gulp.task('rollup:umd', function () {
       }
 
     }))
+    .pipe(replace('jquery/index', 'jquery'))
+    .pipe(replace('underscore/index', 'underscore'))
     .pipe(rename('yntoast.umd.js'))
     .pipe(gulp.dest(distFolder));
 });
