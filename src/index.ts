@@ -4,15 +4,15 @@ import { SampleComponent } from './sample.component';
 import { SampleDirective } from './sample.directive';
 import { SamplePipe } from './sample.pipe';
 import { SampleService } from './sample.service';
-// import { WidgetToastComponent } from './toast.component';
-// import { ToastBroadcasterAdapter } from './broadcasterAdapter';
+import { WidgetToastComponent } from './toast.component';
+import { ToastBroadcasterAdapter } from './broadcasterAdapter';
 
 export * from './sample.component';
 export * from './sample.directive';
 export * from './sample.pipe';
 export * from './sample.service';
-// export * from './toast.component';
-// export * from './broadcasterAdapter';
+export * from './toast.component';
+export * from './broadcasterAdapter';
 
 @NgModule({
   imports: [
@@ -22,20 +22,21 @@ export * from './sample.service';
     SampleComponent,
     SampleDirective,
     SamplePipe,
-    // WidgetToastComponent
+    WidgetToastComponent
   ],
   exports: [
     SampleComponent,
     SampleDirective,
-    SamplePipe
+    SamplePipe,
+    WidgetToastComponent
   ]
 })
 export class ToastModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: ToastModule,
-      providers: [SampleService]
-      // providers: [SampleService, ToastBroadcasterAdapter]
+      // providers: [SampleService]
+      providers: [SampleService, ToastBroadcasterAdapter]
     };
   }
 }
