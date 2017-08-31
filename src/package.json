@@ -1,6 +1,6 @@
 {
   "name": "yntoast",
-  "version": "2.20.0",
+  "version": "2.21.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/guozefei/yntoast"
@@ -25,8 +25,8 @@
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4",
     "underscore": "^1.8.3",
-    "@types/jquery": "^2.0.48",
+    "@types/jquery": "^3.2.12",
     "@types/underscore": "^1.8.1",
-    "jquery": "^1.9.1"
+    "jquery": "^3.2.1"
   }
 }

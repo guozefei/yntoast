@@ -29,6 +29,9 @@
       padding: 0 18px; }
       .widget-container .widget-toast .info .icon-hint {
         display: none; }
+    .widget-container .widget-toast .test {
+      display: block;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAgVBMVEUAAABGuV1DvFE9wlVGuVFDvFlCvVVAv1JDvFVCvVRCvVNBvlRCvVRDv1VBvlVBvlNDv1VCvVRDvlVCv1RDvlRCvVVCvlRCvlRCvlVCvlRCv1RCv1VCvVRCvlRCvlNCvlRCvlRCvlRCvlRCvlRCvlRCvlRCvlRCvlRCvlRCvlT///8Pj0OkAAAAKXRSTlMACxMVFhc2ODk6TVJVV1pub3B+f4KvvcDBxcbKztHf4+nv8PHy8/T1/gbAVXMAAAABYktHRCpTvtSeAAAAdklEQVQI112PSQKCMAADo8V9Q4tr2bRFOv//oIeCB3JKTjORpMy6tnUXI0nS8QsA3UGS9pEhcScZzz/vuYqxh22NVTUsvzlDqUDzAvw6j+DV8Vw8+KzyCARVcDfXZR4BShXAbXZKNJtAdRxBE42ppJRZ1/fpwg/8iRXN0Ov3WwAAAABJRU5ErkJggg==); }
     .widget-container .widget-toast .icon-hint {
       display: none; }
     .widget-container .widget-toast .success,

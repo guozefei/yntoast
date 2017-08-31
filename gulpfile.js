@@ -16,6 +16,7 @@ const srcFolder = path.join(rootFolder, 'src');
 const tmpFolder = path.join(rootFolder, '.tmp');
 const buildFolder = path.join(rootFolder, 'build');
 const distFolder = path.join(rootFolder, 'dist');
+const exampleFolder = path.join(rootFolder, 'example');
 
 /**
  * 1. Delete /dist folder
@@ -25,6 +26,12 @@ gulp.task('clean:dist', function () {
   // Delete contents but not dist folder to avoid broken npm links
   // when dist directory is removed while npm link references it.
   return deleteFolders([distFolder + '/**', '!' + distFolder]);
+});
+gulp.task('clean:exampleToast', function () {
+
+  // Delete contents but not dist folder to avoid broken npm links
+  // when dist directory is removed while npm link references it.
+  return deleteFolders([exampleFolder + '/node_modules/yntoast/**']);
 });
 
 gulp.task('sass', function () {
@@ -183,6 +190,11 @@ gulp.task('copy:readme', function () {
     .pipe(gulp.dest(distFolder));
 });
 
+gulp.task('copy:exampleToast', function () {
+  return gulp.src([distFolder + '/*'])
+    .pipe(gulp.dest(exampleFolder + '/node_modules/yntoast'));
+});
+
 /**
  * 10. Copy icons.svg from / to /dist
  */
@@ -208,6 +220,7 @@ gulp.task('clean:build', function () {
 gulp.task('compile', function () {
   runSequence(
     'clean:dist',
+    'clean:exampleToast',
     'sass',
     'copy:source',
     'inline-resources',
@@ -217,6 +230,7 @@ gulp.task('compile', function () {
     'copy:build',
     'copy:manifest',
     'copy:readme',
+    'copy:exampleToast',
     // 'copy:icons',
     'clean:build',
     'clean:tmp',
