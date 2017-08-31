@@ -15,6 +15,10 @@
     border-radius: 0 0 4px 4px;
     background: #fff;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+    p {
+      display: inline-block;
+      vertical-align: middle;
+    }
     .tool {
       cursor: pointer;
       color: #78a2de;
@@ -33,12 +37,10 @@
         display: none;
       }
     }
-    .test {
-      display: block;
-      background-image: url('./images/success.png');
-    }
     .icon-hint {
       display: none;
+      width: 14px;
+      height: 14px;
     }
     .success,
     .error,
@@ -68,7 +70,7 @@
     }
     .success {
       .icon-success {
-        display: block;
+        display: inline-block;
       }
       .icon-error {
         display: none;
@@ -82,7 +84,7 @@
         display: none;
       }
       .icon-error {
-        display: block;
+        display: inline-block;
       }
       .icon-warning {
         display: none;  
@@ -96,7 +98,7 @@
         display: none;
       }
       .icon-warning {
-        display: block;  
+        display: inline-block;  
       }
     }
   }

@@ -15,6 +15,6 @@ export class AppComponent {
 
   }
   toast() {
-    this.broadcaster.broadcast('ynote.toast', 'haha');
+    this.broadcaster.broadcast('ynote.toast', 'haha', 'success');
   }
  }

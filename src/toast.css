@@ -15,6 +15,9 @@
     border-radius: 0 0 4px 4px;
     background: #fff;
     box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.12); }
+    .widget-container .widget-toast p {
+      display: inline-block;
+      vertical-align: middle; }
     .widget-container .widget-toast .tool {
       cursor: pointer;
       color: #78a2de; }
@@ -29,11 +32,10 @@
       padding: 0 18px; }
       .widget-container .widget-toast .info .icon-hint {
         display: none; }
-    .widget-container .widget-toast .test {
-      display: block;
-      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAgVBMVEUAAABGuV1DvFE9wlVGuVFDvFlCvVVAv1JDvFVCvVRCvVNBvlRCvVRDv1VBvlVBvlNDv1VCvVRDvlVCv1RDvlRCvVVCvlRCvlRCvlVCvlRCv1RCv1VCvVRCvlRCvlNCvlRCvlRCvlRCvlRCvlRCvlRCvlRCvlRCvlRCvlRCvlT///8Pj0OkAAAAKXRSTlMACxMVFhc2ODk6TVJVV1pub3B+f4KvvcDBxcbKztHf4+nv8PHy8/T1/gbAVXMAAAABYktHRCpTvtSeAAAAdklEQVQI112PSQKCMAADo8V9Q4tr2bRFOv//oIeCB3JKTjORpMy6tnUXI0nS8QsA3UGS9pEhcScZzz/vuYqxh22NVTUsvzlDqUDzAvw6j+DV8Vw8+KzyCARVcDfXZR4BShXAbXZKNJtAdRxBE42ppJRZ1/fpwg/8iRXN0Ov3WwAAAABJRU5ErkJggg==); }
     .widget-container .widget-toast .icon-hint {
-      display: none; }
+      display: none;
+      width: 14px;
+      height: 14px; }
     .widget-container .widget-toast .success,
     .widget-container .widget-toast .error,
     .widget-container .widget-toast .warning {
@@ -59,7 +61,7 @@
     .widget-container .widget-toast .icon-warning {
       background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAASFBMVEUAAADyvGvztm3zuWjvu2rwvWnwvGruu2nvvGnvvWjvvGrvvGnvvGnvvGnvvGnvvGnvvGnvvGnvvGnvvGnvvGnvvGnvvGn///99cvzGAAAAFnRSTlMAExUWUlVXWn5/gsrO0env8fLz9PX+IYgBNQAAAAFiS0dEFwvWmI8AAABTSURBVAjXXY9bDoAgDARXfFFQEITe/6iGamLT+Wg6SZPuAsBMMaXoHYT9ZqFuw9bOH30B3CUrxsgTAv/KhFPrgaq1WDXHgRVkH5kYNqRUaO2t8ADlJAv/GYUQEAAAAABJRU5ErkJggg==); }
     .widget-container .widget-toast .success .icon-success {
-      display: block; }
+      display: inline-block; }
     .widget-container .widget-toast .success .icon-error {
       display: none; }
     .widget-container .widget-toast .success .icon-warning {
@@ -67,7 +69,7 @@
     .widget-container .widget-toast .error .icon-success {
       display: none; }
     .widget-container .widget-toast .error .icon-error {
-      display: block; }
+      display: inline-block; }
     .widget-container .widget-toast .error .icon-warning {
       display: none; }
     .widget-container .widget-toast .warning .icon-success {
@@ -75,4 +77,4 @@
     .widget-container .widget-toast .warning .icon-error {
       display: none; }
     .widget-container .widget-toast .warning .icon-warning {
-      display: block; }
+      display: inline-block; }
