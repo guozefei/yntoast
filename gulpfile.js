@@ -7,7 +7,9 @@ var gulp = require('gulp'),
   del = require('del'),
   runSequence = require('run-sequence'),
   replace = require('gulp-replace'),
-  inlineResources = require('./tools/gulp/inline-resources');
+  inlineResources = require('./tools/gulp/inline-resources'),
+  base64 = require('gulp-base64'),
+  sass = require('gulp-sass');
 
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
@@ -23,6 +25,13 @@ gulp.task('clean:dist', function () {
   // Delete contents but not dist folder to avoid broken npm links
   // when dist directory is removed while npm link references it.
   return deleteFolders([distFolder + '/**', '!' + distFolder]);
+});
+
+gulp.task('sass', function () {
+  return gulp.src('./src/toast.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(base64())
+    .pipe(gulp.dest(srcFolder));
 });
 
 /**
@@ -175,14 +184,22 @@ gulp.task('copy:readme', function () {
 });
 
 /**
- * 10. Delete /.tmp folder
+ * 10. Copy icons.svg from / to /dist
+ */
+// gulp.task('copy:icons', function () {
+//   return gulp.src([path.join(srcFolder, 'icons.svg')])
+//     .pipe(gulp.dest(distFolder));
+// });
+
+/**
+ * 11. Delete /.tmp folder
  */
 gulp.task('clean:tmp', function () {
   return deleteFolders([tmpFolder]);
 });
 
 /**
- * 11. Delete /build folder
+ * 12. Delete /build folder
  */
 gulp.task('clean:build', function () {
   return deleteFolders([buildFolder]);
@@ -191,6 +208,7 @@ gulp.task('clean:build', function () {
 gulp.task('compile', function () {
   runSequence(
     'clean:dist',
+    'sass',
     'copy:source',
     'inline-resources',
     'ngc',
@@ -199,6 +217,7 @@ gulp.task('compile', function () {
     'copy:build',
     'copy:manifest',
     'copy:readme',
+    // 'copy:icons',
     'clean:build',
     'clean:tmp',
     function (err) {
@@ -211,11 +230,37 @@ gulp.task('compile', function () {
     });
 });
 
+// gulp.task('svg', function () {
+//     return gulp.src('src/svg/*.svg')
+//         .pipe(svgSprite(
+//           {
+//             svg: {
+//                 sprite: "icons.svg"
+//             },
+//             cssFile: "./svg.css"
+//         }))
+//         .pipe(gulp.dest(srcFolder));
+// });
+
+// gulp.task('sprite', function () {
+//     gulp.src('./src/images/*.png')
+//       .pipe(sprite('sprites.png', {
+//         imagePath: srcFolder,
+//         cssPath: srcFolder,
+//         preprocessor: 'css'
+//       }))
+//       .pipe(gulp.dest(srcFolder));
+// });
+
 /**
  * Watch for any change in the /src folder and compile files
  */
 gulp.task('watch', function () {
   gulp.watch(`${srcFolder}/**/*`, ['compile']);
+});
+   
+gulp.task('sass:watch', function () {
+  gulp.watch('./src/**/*.scss', ['sass']);
 });
 
 gulp.task('clean', ['clean:dist', 'clean:tmp', 'clean:build']);

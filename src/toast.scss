@@ -53,6 +53,15 @@
         margin-left: 30px;
       }
     }
+    .icon-success {
+      background-image: url('./images/success.png');
+    }
+    .icon-error {
+      background-image: url('./images/error.png');
+    }
+    .icon-warning {
+      background-image: url('./images/warning.png');
+    }
     .success {
       .icon-success {
         display: block;

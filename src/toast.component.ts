@@ -14,7 +14,7 @@ import { ToastBroadcasterAdapter } from './broadcasterAdapter';
     selector: 'widget-toast',
     templateUrl: './toast.component.html',
     styleUrls: [
-        './toast.scss'
+        './toast.css'
     ]
 })
 export class WidgetToastComponent implements OnInit, OnDestroy {
@@ -69,7 +69,7 @@ export class WidgetToastComponent implements OnInit, OnDestroy {
         if (this.hideTimeout) {
             clearTimeout(this.hideTimeout);
         }
-        this.hideTimeout = setTimeout((): void => this.hide(), 3000);
+        this.hideTimeout = setTimeout((): void => this.hide(), 30000000);
         this.el.find('p').attr('class', this.theme);
         setTimeout((): void => {
             if (!this.el.is(':visible')) {
